@@ -23,3 +23,57 @@
 //     else if (elem === "George") document.write(`<u>${elem}</u> <br>`)
 //     else document.write(`${elem}`)
 // }
+
+// let parking = {
+//     "1-qavat": {
+//         "l": [1, 2, 3, 4, 5],
+//         "m": 1990
+//     },
+//     "2-qavat": 2005,
+//     "3-qavat": "2025"
+// }
+//
+// let result = parking["2-qavat"] + Number(parking["3-qavat"]) + parking["1-qavat"].m
+//
+// let num = 0
+// for (let i of parking["1-qavat"].l) {
+//     num += i
+// }
+//
+// console.log(result + num)
+
+
+// let parking = {
+//     "1-qavat": {
+//         "l": [1, 2, 3, 4, 5],
+//         "m": 1990
+//     },
+//     "2-qavat": 2005,
+//     "3-qavat": "2005"
+// }
+//
+// let result = 0;
+//
+// if ("2-qavat" in parking) {
+//     result += parking["2-qavat"];
+// }
+//
+// if ("3-qavat" in parking) {
+//     result += Number(parking["3-qavat"]);
+// }
+//
+// if ("1-qavat" in parking) {
+//     if ("m" in parking["1-qavat"]) {
+//         result += parking["1-qavat"]["m"];
+//     }
+//
+//     if ("l" in parking["1-qavat"]) {
+//         let num = 0;
+//         for (let i = 0; i < parking["1-qavat"]["l"].length; i++) {
+//             num += parking["1-qavat"]["l"][i];
+//         }
+//         result += num;
+//     }
+// }
+//
+// console.log(result);
