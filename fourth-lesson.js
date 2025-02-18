@@ -77,3 +77,47 @@
 // }
 //
 // console.log(result);
+
+
+// let parking = {
+//     "1-qavat": {
+//         "l": [1, 2, 3, 4, 5],
+//         "m": 1990
+//     },
+//     "2-qavat": 2005,
+//     "3-qavat": "2025"
+// }
+//
+// let num = 0
+// for (let key in parking) {
+//     if (typeof parking[key] != "object") {
+//         num += Number(parking[key])
+//     } else{
+//         for (let keys in parking[key]) {
+//             if (Array.isArray(parking[key][keys])) {
+//                 for (let elem of parking[key][keys]) {
+//                     num += Number(elem)
+//                 }
+//             } else {
+//                 num += Number(parking[key][keys])
+//             }
+//         }
+//     }
+// }
+//
+// console.log(num)
+
+// Homework
+// let uzb = {
+//     aholisi: 37000000,
+//     maydoni: 442000,
+//     viloyatlar: {
+//         qashqadaryo: [1500000, 60000],
+//         sirdaryo: [880000, 30000],
+//         fargona: [2500000, 88000]
+//     },
+//     kodi: "+998",
+//     poytaxt: "Toshkent",
+//     index: 1,
+//     suv: false //suv sathi
+// }
