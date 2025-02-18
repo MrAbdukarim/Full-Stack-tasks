@@ -199,3 +199,11 @@
 // let tc = prompt("Farengeyt bo'yicha darajani kiriting: ")
 // C = (F - 32) * 5/9
 // document.write("Natija: " + C)
+
+
+// let shaharlar = ["Toshkent", "Samarqand", "Xiva"]
+// let result = shaharlar[0] + shaharlar[1] + shaharlar[2]
+// console.log(result)
+// console.log(result.length - 1)
+
+
