@@ -77,8 +77,8 @@
 // }
 //
 // console.log(result);
-
-
+//
+//
 // let parking = {
 //     "1-qavat": {
 //         "l": [1, 2, 3, 4, 5],
@@ -92,7 +92,7 @@
 // for (let key in parking) {
 //     if (typeof parking[key] != "object") {
 //         num += Number(parking[key])
-//     } else{
+//     } else {
 //         for (let keys in parking[key]) {
 //             if (Array.isArray(parking[key][keys])) {
 //                 for (let elem of parking[key][keys]) {
@@ -107,17 +107,123 @@
 //
 // console.log(num)
 
+
 // Homework
-// let uzb = {
-//     aholisi: 37000000,
-//     maydoni: 442000,
-//     viloyatlar: {
-//         qashqadaryo: [1500000, 60000],
-//         sirdaryo: [880000, 30000],
-//         fargona: [2500000, 88000]
-//     },
-//     kodi: "+998",
-//     poytaxt: "Toshkent",
-//     index: 1,
-//     suv: false //suv sathi
-// }
+let uzb = {
+    maydoni: 448900,
+    axolisi: 35650000,
+    poytaxti: "Toshkent",
+    viloyatlari: {
+        "Andijon": {
+            shaharlari: ["Asaka", "Andijon", "Shahrixon"],
+            maydon: 4027,
+            markazi: "Andijon",
+            axolisi: 3420000,
+        },
+        "Farg'ona": {
+            shaharlari: ["Qo'qon", "Farg'ona", "Dang'ara"],
+            maydon: 6800,
+            markazi: "Farg'ona",
+            axolisi: 4123000,
+        },
+        "Namangan": {
+            shaharlari: ["Chust", "Namangan", "Kosonsoy"],
+            maydon: 7900,
+            markazi: "Namangan",
+            axolisi: 3100000,
+        },
+        "Toshkent": {
+            shaharlari: ["Zangiota", "Toshkent", "Qibray"],
+            maydon: 15300,
+            markazi: "Toshkent",
+            axolisi: 6150000,
+        },
+        "Sirdaryo": {
+            shaharlari: ["Yangiyer", "Gulistin", "Sirdaryo"],
+            maydon: 4028,
+            markazi: "Guliston",
+            axolisi: 914000,
+        },
+        "Jizzax": {
+            shaharlari: ["Do'stlik", "Jizzah", "Zomin"],
+            maydon: 21200,
+            markazi: "Jizzax",
+            axolisi: 1500000,
+        },
+        "Samarqand": {
+            shaharlari: ["Ishtixon", "Samarqand", "Jomboy"],
+            maydon: 16400,
+            markazi: "Samarqand",
+            axolisi: 4159000,
+        },
+        "Qashqadaryo": {
+            shaharlari: ["Shahrisabiz", "Qarshi", "Kitob"],
+            maydon: 28500,
+            markazi: "Qarshi",
+            axolisi: 3500000,
+        },
+        "Surxandaryo": {
+            shaharlari: ["Denov", "Termiz", "Boysun"],
+            maydon: 20000,
+            markazi: "Termiz",
+            axolisi: 3000000,
+        },
+        "Buxoro": {
+            shaharlari: ["G'ishdivon", "Buxoro", "Vobkent"],
+            maydon: 40000,
+            markazi: "Buxoro",
+            axolisi: 2000000,
+        },
+        "Navoiy": {
+            shaharlari: ["Zarafshon", "Navoiy", "Uchquduq"],
+            maydon: 111100,
+            markazi: "Navoiy",
+            axolisi: 1075000,
+        },
+        "Xorazm": {
+            shaharlari: ["Xiva", "Urganch", "Xazorasp"],
+            maydon: 6300,
+            markazi: "Urganch",
+            axolisi: 2000000,
+        },
+
+        "Qoraqolpog'iston": {
+            shaharlari: ["Xo'jali", "Nukus", "Qo'ng'irot"],
+            maydon: 166000,
+            markazi: "Nukus",
+            axolisi: 2000000,
+        }
+    },
+    telefonKodi: "+998"
+}
+
+let enter_str = prompt("Ma'lumot kiriting: ")
+let viloyat = uzb.viloyatlari[enter_str]
+
+if (viloyat) {
+    let info = uzb.viloyatlari[enter_str];
+    document.write(`
+            <b><u>${enter_str}</u> viloyati</b><br>
+            shaharlari: ${info.shaharlari}<br>
+            maydon: ${info.maydon}<br>
+            markazi: ${info.markazi}<br>
+            axolisi: ${info.axolisi}<br>
+        `);
+} else if (enter_str === "telefonKodi" || enter_str === "Telefon kodi") {
+    document.write(`O'zbekiston telefon raqamining kodi: ${uzb.telefonKodi}`)
+} else if (enter_str) {
+    for (let v in uzb.viloyatlari) {
+        if (uzb.viloyatlari[v].markazi.includes(enter_str)) {
+            document.write(`${enter_str} shahri ${v} viloyatida joylashgan.`);
+        }
+    }
+} else {
+    document.write("Xato ma'lumot kiritdingiz.");
+}
+
+// 1) Prompt yordamida berilgan so'rovga tegishli malumotlarni chiqarib beramiz
+// Nukus deb yozilsa => Qoraqolpog'iston
+// Qoraqolpog'iston deb yozilsa => maydoni, aholisi, markazi
+// 2) Urganch deb yozilsa axolisi yoki maydoni boyicha nechinchi o'rindaligini
+// chiqarishimiz kerak boladi
+// 3) telefonKodi yozilsa uzbekistan telefon kodi chiqishi kerak
