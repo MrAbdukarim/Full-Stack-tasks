@@ -77,8 +77,8 @@
 // }
 //
 // console.log(result);
-//
-//
+
+
 // let parking = {
 //     "1-qavat": {
 //         "l": [1, 2, 3, 4, 5],
